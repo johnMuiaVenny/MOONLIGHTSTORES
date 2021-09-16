@@ -93,6 +93,7 @@ METHOD = (
 
 class Order(models.Model):
     cart = models.OneToOneField(Cart, on_delete=models.CASCADE)
+    cartproducts = models.ManyToManyField(CartProduct)
     ordered_by = models.CharField(max_length=200)
     shipping_address = models.CharField(max_length=200)
     mobile = models.CharField(max_length=10)
