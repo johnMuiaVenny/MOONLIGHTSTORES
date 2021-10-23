@@ -285,7 +285,7 @@ class EsewaVerifyView(View):
 
 
 class CustomerRegistrationView(CreateView):
-    template_name = "customerregistration.html"
+    template_name = "customerlogin.html"
     form_class = CustomerRegistrationForm
     success_url = reverse_lazy("ecomapp:home")
 
@@ -526,3 +526,8 @@ class AdminProductCreateView(AdminRequiredMixin, CreateView):
         for i in images:
             ProductImage.objects.create(product=p, image=i)
         return super().form_valid(form)
+
+
+
+def wishlist(request):
+    return render(request, 'wishlist.html')
